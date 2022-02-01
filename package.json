@@ -21,11 +21,7 @@
     "url": "https://github.com/koromerzhin/template-socketio/issues"
   },
   "homepage": "https://github.com/koromerzhin/template-socketio#readme",
-  "devDependencies": {
-    "generate-changelog": "1.8.0",
-    "jscpd": "3.4.2"
-  },
   "dependencies": {
-    "koromerzhin-dependencies": "^1.1.1"
+    "koromerzhin-dependencies": "^1.3.0"
   }
 }
