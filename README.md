@@ -30,6 +30,14 @@ Hosts:
 
 - socketio.traefik.me
 
+## Download
+
+```sh
+git clone git@github.com:koromerzhin/template-socketio.git template-socketio
+cd template-socketio
+git submodule update --init
+```
+
 ## Install
 
 ```sh
