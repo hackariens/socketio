@@ -1,8 +1,6 @@
 
 version: "3.4"
 networks:
-  proxylampy:
-    external: true
   net:
     driver: overlay
     attachable: true
@@ -15,12 +13,4 @@ services:
     volumes:
       - ${PWD}/app:/app
     networks:
-      - proxylampy
       - net
-    deploy:
-      labels:
-        - "traefik.enable=true"
-        - "traefik.http.routers.socketio.rule=Host(`socketio.traefik.me`)"
-        - "traefik.http.routers.socketio-tls.tls.domains[0].main=socketio.traefik.me"
-        - "traefik.http.routers.socketio.tls=true"
-        - "traefik.http.services.socketio.loadbalancer.server.port=80"
