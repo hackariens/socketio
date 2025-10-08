@@ -42,6 +42,7 @@ tasks:
   help:
     desc: "Affiche l'aide détaillée"
     aliases: [ h ]
+    silent: true
     cmds:
     - task: default
 
@@ -81,6 +82,7 @@ tasks:
 
   socketio:exec:
     desc: "Exécute une commande dans un conteneur en cours d'exécution"
+    silent: true
     cmds:
     - task: socketio:getpull-image
     - task: socketio:deploy
@@ -89,6 +91,7 @@ tasks:
 
   socketio:bash:
     desc: "Ouvre un shell bash dans le conteneur www"
+    silent: true
     cmds:
     - task: docker:stack:shell
       vars:
