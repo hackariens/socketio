@@ -1,10 +1,15 @@
-
 version: "3.4"
 networks:
   proxylampy:
     external: true
 services:
   www:
+    image: node:22.12.0
+    working_dir: /app
+    command: >
+      sh -c "npm install && npm run serve"
+    volumes:
+      - ${PWD}/apps:/app:delegated
     networks:
       - proxylampy
     deploy:
@@ -13,4 +18,4 @@ services:
         - "traefik.http.routers.socketio.rule=Host(`socketio.traefik.me`)"
         - "traefik.http.routers.socketio-tls.tls.domains[0].main=socketio.traefik.me"
         - "traefik.http.routers.socketio.tls=true"
-        - "traefik.http.services.socketio.loadbalancer.server.port=80"
+        - "traefik.http.services.socketio.loadbalancer.server.port=3000"
